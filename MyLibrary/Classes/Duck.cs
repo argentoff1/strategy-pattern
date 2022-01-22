@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace MyLibrary
 {
-    public class MallardDuck: Duck
+    public abstract class Duck
     {
-        public override string Display()
+        public string Swim()
         {
-            return "Display " + this.GetType();
+            return "Swim " + this.GetType();
         }
+        public abstract string Display();
     }
 }

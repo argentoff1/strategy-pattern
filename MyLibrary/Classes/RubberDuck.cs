@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyLibrary.Interfaces;
 
 namespace MyLibrary
 {
-    public class RedheadDuck: Duck
+    public class RubberDuck: Duck, IQuackable
     {
         public override string Display()
         {
-            return "Display " + this.GetType();
+            return "RubberDuck " + GetType();
         }
-        
+        public string Quack()
+        {
+            return "Quack " + this.GetType();
+        }
     }
 }
