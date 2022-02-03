@@ -3,23 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyLibrary.Interfaces;
+using MyLibrary.Classes.Behaviors;
 
-namespace MyLibrary
+namespace MyLibrary.Classes
 {
-    public class MallardDuck: Duck, IFlyable, IQuackable
+    public class MallardDuck: Duck
     {
-        public override string Display()
+        public MallardDuck()
         {
-            return "MallardDuck " + this.GetType();
-        }
-        public string Fly()
-        {
-            return "Fly " + this.GetType();
-        }
-        public string Quack()
-        {
-            return "Quack " + this.GetType();
+            flyBehavior = new FlyWithWings();
+            quackBehavior = new DQuack();
         }
     }
 }

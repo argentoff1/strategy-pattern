@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MyLibrary.Interfaces
 {
-    public interface IFlyable
+    public interface IQuackBehavior
     {
-        string Fly();
+        string Quack();
     }
 }

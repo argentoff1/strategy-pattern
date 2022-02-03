@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyLibrary.Classes;
+using MyLibrary.Classes.Behaviors;
 
-namespace MyLibrary
+namespace MyLibrary.Classes
 {
     public class DecoyDuck: Duck
     {
-        public override string Display()
+        public DecoyDuck()
         {
-            return "DecoyDuck " + GetType();
+            quackBehavior = new MuteQuack();
+            flyBehavior = new FlyNoWay();
         }
     }
 }

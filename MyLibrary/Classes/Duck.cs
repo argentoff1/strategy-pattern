@@ -3,15 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MyLibrary.Interfaces;
 
-namespace MyLibrary
+namespace MyLibrary.Classes
 {
-    public abstract class Duck
+    public class Duck
     {
+        protected IFlyBehavior flyBehavior;
+        protected IQuackBehavior quackBehavior;
+
         public string Swim()
         {
-            return "Swim " + this.GetType();
+            return "Буль буль буль ";
         }
-        public abstract string Display();
+        public string Display()
+        {
+            return $"{GetType()} | {flyBehavior.GetType()} | {quackBehavior.GetType()}";
+        }
+
+        public string Quack()
+        {
+            return quackBehavior.Quack();
+        }
+        public string Fly()
+        {
+            return flyBehavior.Fly();
+        }
+        public void SetQuackBehavior(IQuackBehavior qBehavior)
+        {
+            quackBehavior = qBehavior;
+        }
+        public void SetFlyBehavior(IFlyBehavior fBehavior)
+        {
+            flyBehavior = fBehavior;
+        }
     }
 }

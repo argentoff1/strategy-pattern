@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MyLibrary;
 using MyLibrary.Interfaces;
+using MyLibrary.Classes;
 
 namespace LaboratoryWork_v._5._0
 {
@@ -23,15 +24,8 @@ namespace LaboratoryWork_v._5._0
             {
                 Console.WriteLine(duck.Display());
                 Console.WriteLine(duck.Swim());
-
-                if (duck is IQuackable)
-                {
-                    Console.WriteLine((duck as IQuackable).Quack());
-                }
-                if (duck is IFlyable)
-                {
-                    Console.WriteLine((duck as IFlyable).Fly());
-                }
+                Console.WriteLine(duck.Quack());
+                Console.WriteLine(duck.Fly());
             }
 
             Console.ReadKey();

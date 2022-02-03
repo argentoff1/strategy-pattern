@@ -4,22 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MyLibrary.Interfaces;
+using MyLibrary.Classes.Behaviors;
 
-namespace MyLibrary
+namespace MyLibrary.Classes
 {
-    public class RedheadDuck: Duck, IFlyable, IQuackable
+    public class RedheadDuck: Duck
     {
-        public override string Display()
+        public RedheadDuck()
         {
-            return "RedheadDuck " + this.GetType();
-        }
-        public string Fly()
-        {
-            return "Fly " + this.GetType();
-        }
-        public string Quack()
-        {
-            return "Quack " + this.GetType();
+            flyBehavior = new FlyWithWings();
+            quackBehavior = new DQuack();
         }
     }
 }
